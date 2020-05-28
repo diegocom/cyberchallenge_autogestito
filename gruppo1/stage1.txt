@@ -1,0 +1,12 @@
+CTF gruppo <?>
+-- La flag rispetta il formato CCIT{} --
+
+Benvenuti alla nostra challenge!
+
+Il primo passo è l'eseguibile `start`.
+
+Il python get_flag.py servirà alla fine per recuperare la flag, servirà
+passargli una password che troverete alla fine della challenge. Lo potete
+ignorare per adesso.
+
+Buona fortuna.
